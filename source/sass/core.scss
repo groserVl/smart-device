@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+// *,
+// *::before,
+// *::after {
+//   box-sizing: border-box;
+// }
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  position: relative;
+
+  margin: 0 auto;
+  padding: 0;
+
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 21.5px;
+  font-weight: 400;
+  color: $text;
+  word-wrap: normal;
+
+  background-color: $bg;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 30px;
+}

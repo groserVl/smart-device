@@ -1,3 +1,155 @@
 .footer {
-  width: 100%;
+
+  padding-top: 65px;
+
+  color: $gray;
+
+  background-color: $white;
+}
+
+.footer .container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.footer__wrapper-column {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 53px;
+}
+
+.footer__wrapper-title button {
+  display: none;
+}
+
+.footer__social {
+  margin-top: 40px;
+}
+
+.footer__item-copy {
+  position: absolute;
+  bottom: -50px;
+  left: 226px;
+
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.footer__wrapper-navigation {
+  width: 450px;
+}
+
+.footer__wrapper-contacts {
+  margin-right: 5px;
+}
+
+.footer__title-navigation,
+.footer__title-contacts {
+  @include h4(28px);
+}
+
+@media (max-width: $large-width) {
+  .footer__wrapper-navigation {
+    width: auto;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .footer {
+    padding-top: 18px;
+  }
+
+  .footer .container {
+    padding: 0;
+  }
+
+  .footer__wrapper-column {
+    flex-wrap: wrap;
+    padding-bottom: 33px;
+  }
+
+  .footer__wrapper-logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 38px;
+    padding: 0 25px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid rgba(#626962, 0.2);
+  }
+
+  .footer__item-copy {
+    position: static;
+
+    margin-left: auto;
+    margin-right: 70px;
+  }
+
+  .footer__social {
+    margin: 0;
+  }
+
+  .footer__wrapper-navigation {
+    padding-left: 25px;
+  }
+
+  .footer__wrapper-contacts {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .footer {
+    padding-top: 45px;
+  }
+
+  .footer__wrapper-column {
+    padding-bottom: 0;
+  }
+
+  .footer__wrapper-logo {
+    display: block;
+    margin-bottom: 28px;
+    padding: 0 15px 40px;
+
+    text-align: center;
+  }
+
+  .footer__item-copy {
+    margin: 20px 0 25px;
+  }
+
+  .footer__social {
+    margin: 0 auto;
+  }
+
+  .footer__wrapper-navigation,
+  .footer__wrapper-contacts {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .footer .footer__site-navigation,
+  .footer .footer__office-contacts {
+    margin-top: 34px;
+    padding-bottom: 23px;
+  }
+
+  .footer .footer__site-navigation {
+    display: none;
+  }
+
+  .footer__wrapper-contacts {
+    padding-top: 26px;
+
+    border-top: 1px solid rgba(#626962, 0.2);
+  }
 }

@@ -1,0 +1,36 @@
+.social {
+  width: 112px;
+}
+
+.social__list {
+  @include list-reset();
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 -7.75px;
+}
+
+.social__item {
+  margin: 7.75px;
+}
+
+.social__link {
+  &:hover svg,
+  &:focus svg {
+    transition: all 0.3s;
+    fill: $blue;
+  }
+
+  &:active svg {
+    fill: #cdcdcd;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .copyright__item {
+    &:first-child {
+      display: none;
+    }
+  }
+}

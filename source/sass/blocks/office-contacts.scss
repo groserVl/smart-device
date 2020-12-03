@@ -1,0 +1,33 @@
+.office-contacts {
+  @include list-reset();
+}
+
+.office-contacts li {
+  margin-bottom: 4px;
+}
+
+.office-contacts a {
+  letter-spacing: -0.6px;
+  color: $gray;
+
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+
+  &:active {
+    color: lighten($blue, 30%);
+  }
+}
+
+.office-contacts__address {
+  letter-spacing: -0.6px;
+}
+
+@media (max-width: $mobile-width) {
+  .office-contacts__address {
+    line-height: 24px;
+  }
+}

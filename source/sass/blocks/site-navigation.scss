@@ -1,0 +1,40 @@
+.site-navigation,
+.site-navigation ul {
+  @include list-reset();
+}
+
+.site-navigation {
+  display: flex;
+}
+
+.site-navigation__left-list li,
+.site-navigation__right-list li {
+  margin-bottom: 4px;
+}
+
+.site-navigation a {
+  letter-spacing: -0.6px;
+  color: $gray;
+
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    color: $blue;
+  }
+
+  &:active {
+    color: lighten($blue, 30%);
+  }
+}
+
+.site-navigation__right-item {
+  margin-left: auto;
+  padding-right: 24px;
+}
+
+@media (max-width: $large-width) {
+  .site-navigation {
+    display: block;
+  }
+}

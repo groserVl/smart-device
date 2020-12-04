@@ -20,7 +20,6 @@ a {
 img {
   max-width: 100%;
   height: auto;
-  object-fit: contain;
 }
 
 .visually-hidden {
@@ -58,6 +57,10 @@ body {
   color: $text;
   word-wrap: normal;
 
+  background-image: url("../img/bg-intro1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 878px;
   background-color: $bg;
 }
 

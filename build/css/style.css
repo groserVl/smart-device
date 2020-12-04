@@ -344,9 +344,7 @@ a {
 
 img {
   max-width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain; }
+  height: auto; }
 
 .visually-hidden {
   position: absolute;
@@ -376,6 +374,10 @@ body {
   font-weight: 400;
   color: #666666;
   word-wrap: normal;
+  background-image: url("../img/bg-intro1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 878px;
   background-color: #1b2d37; }
 
 .container {
@@ -384,7 +386,7 @@ body {
   padding: 0 30px; }
 
 .header .container {
-  max-width: 1475px;
+  max-width: 1465px;
   margin: 0 auto;
   padding: 0 25px; }
 
@@ -397,7 +399,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 32px; }
+  padding-top: 31px; }
 
 .header__item {
   width: 37px;
@@ -430,6 +432,8 @@ body {
     opacity: 0.3; }
 
 @media (max-width: 1023px) {
+  .header .container {
+    padding: 0 25px; }
   .header__wrapper-column {
     padding-top: 20px; }
   .header__contacts {
@@ -442,7 +446,7 @@ body {
 
 @media (max-width: 767px) {
   .header .container {
-    padding: 0 16px; }
+    padding: 0 5%; }
   .header__wrapper-column {
     padding-top: 17px; }
   .header__log {
@@ -475,7 +479,7 @@ body {
     opacity: 0.3; }
 
 .contacts__mail svg {
-  margin-right: 18px; }
+  margin-right: 8px; }
 
 .contacts__phone svg {
   margin-right: 7px; }
@@ -769,3 +773,148 @@ body {
     text-align: center; }
   .copyright__item:last-child {
     margin-top: 20px; } }
+
+.intro {
+  color: #ffffff;
+  background-image: url("../img/pcboard1x.png");
+  background-repeat: no-repeat;
+  background-position: 85.7% 21%;
+  background-size: 37.5% auto; }
+
+.intro .container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 25px; }
+
+.intro__text-row {
+  position: relative;
+  padding-top: 225px;
+  padding-bottom: 276px; }
+
+.intro__title {
+  margin: 0;
+  margin-bottom: 30px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 5.5px;
+  text-transform: uppercase; }
+
+.intro__subtitle {
+  position: relative;
+  width: 720px;
+  margin: 0;
+  margin-bottom: 40px;
+  padding-left: 97px;
+  font-size: 22px;
+  line-height: 34px; }
+  .intro__subtitle::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 2px;
+    width: 66px;
+    height: 2px;
+    background-color: #ffffff; }
+
+.intro__link {
+  display: inline-block;
+  margin-left: 97px;
+  padding: 18px 45px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background-color: #00b2ff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .intro__link:hover, .intro__link:focus {
+    background-color: #008ecc; }
+  .intro__link:active {
+    background-color: #006b99; }
+
+.intro__link-mobile {
+  display: none; }
+
+.intro__scroll-down {
+  position: absolute;
+  bottom: 127px;
+  left: -35px;
+  display: block;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer; }
+  .intro__scroll-down:hover, .intro__scroll-down:focus {
+    color: rgba(255, 255, 255, 0.3); }
+
+@media (max-width: 1023px) {
+  .intro {
+    background-image: url("../img/psboard-tablet.png");
+    background-position: 100% -78px;
+    background-size: auto auto; }
+  .intro__text-row {
+    padding-top: 110px;
+    padding-bottom: 163px;
+    padding-left: 60px; }
+  .intro__title {
+    width: 60%;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 4.5px; }
+  .intro__subtitle {
+    width: 450px;
+    margin-bottom: 54px;
+    padding-left: 8%;
+    font-size: 18px;
+    line-height: 28px; }
+    .intro__subtitle::before {
+      width: 8%;
+      left: 5px; }
+  .intro__link {
+    margin-left: 8%;
+    padding: 18px 31px; }
+  .intro__scroll-down {
+    display: none; } }
+
+@media (max-width: 767px) {
+  .intro {
+    background-image: url("../img/psboard-mobile1x.png");
+    background-position: 100% -55px; }
+  .intro .container {
+    padding: 0 5%; }
+  .intro__text-row {
+    padding: 0;
+    padding-top: 230px;
+    padding-bottom: 70px;
+    text-align: center; }
+  .intro__title {
+    margin-bottom: 25px;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 3px;
+    text-align: left; }
+  .intro__subtitle {
+    width: 280px;
+    margin-bottom: 40px;
+    padding-left: 50px;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: left; }
+    .intro__subtitle::before {
+      width: 33px; }
+  .intro__link {
+    margin: 0; }
+  .intro__link-text {
+    display: none; }
+  .intro__link-mobile {
+    display: inline-block; } }

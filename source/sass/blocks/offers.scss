@@ -1,0 +1,153 @@
+.offers {
+  padding-top: 88px;
+  padding-bottom: 127px;
+}
+
+.offers__title {
+  @include h2(50px);
+
+  color: $white;
+}
+
+.offers__list {
+  @include list-reset();
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.offers__item {
+  width: calc(33.33% - 30px);
+  margin: 0 15px;
+}
+
+.offers__wrapper-item {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 620px;
+  padding-top: 52px;
+
+  transition: all 0.3s;
+}
+
+.offers__link {
+  &:hover .offers__wrapper-item {
+    opacity: 0.7;
+  }
+}
+
+.offers__item-title {
+  max-width: 175px;
+  margin: 0;
+  // margin-top: 52px;
+  margin-left: 44px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: $white;
+}
+
+.offers__item-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  opacity: 0.2;
+}
+
+.offers__item-arrow {
+  position: relative;
+  margin-left: auto;
+  margin-top: auto;
+
+  width: 63px;
+  height: 63px;
+
+  background-color: $blue;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    margin-left: -5px;
+
+    border-bottom: 1px solid $white;
+    border-right: 1px solid $white;
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .offers {
+    padding-top: 51px;
+    padding-bottom: 31px;
+  }
+
+  .offers__title {
+    max-width: 615px;
+
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  .offers__list {
+    display: block;
+  }
+
+  .offers__wrapper-item {
+    min-height: 256px;
+    margin-bottom: 46px;
+    padding-top: 40px;
+  }
+
+  .offers__item {
+    width: auto;
+  }
+
+  .offers__item-arrow {
+    &::before {
+      width: 7px;
+      height: 7px;
+      margin-top: -3.5px;
+      margin-left: -3.5px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .offers {
+    padding-bottom: 35px;
+  }
+
+  .offers__title {
+    margin-left: 10px;
+    margin-bottom: 40px;
+
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .offers__wrapper-item {
+    margin-bottom: 30px;
+    padding-top: 21px;
+  }
+
+  .offers__item-title {
+    margin-left: 40px;
+  }
+}

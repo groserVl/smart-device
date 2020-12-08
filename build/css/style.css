@@ -409,6 +409,9 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); }
 
+.modal-overlay--show {
+  display: block; }
+
 .header .container {
   max-width: 1465px;
   margin: 0 auto;
@@ -1437,6 +1440,9 @@ input[type="checkbox"]:checked + span::before {
   .form__button-close:active {
     opacity: 0.3; }
 
+.form__button-close--show {
+  display: block; }
+
 @media (max-width: 1023px) {
   .form {
     width: 591px; }
@@ -1488,8 +1494,6 @@ input[type="checkbox"]:checked + span::before {
   .form__row {
     width: auto;
     margin-bottom: 31px; }
-  .form__wrapper-column {
-    display: block; }
   .form__wrapper-textarea {
     margin-top: 0;
     margin-bottom: 24px; }
@@ -1513,7 +1517,6 @@ input[type="checkbox"]:checked + span::before {
   top: 50%;
   left: 50%;
   z-index: 100;
-  display: none;
   width: 490px;
   padding: 30px 39px 0;
   -webkit-transform: translate(-50%, -50%);

@@ -161,6 +161,10 @@ input[type="checkbox"]:checked + span {
   }
 }
 
+.form__button-close--show {
+  display: block;
+}
+
 @media (max-width: $tablet-width) {
   .form {
     width: 591px;

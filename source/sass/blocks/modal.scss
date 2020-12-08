@@ -1,0 +1,65 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+
+  display: none;
+  width: 490px;
+  padding: 30px 39px 0;
+
+  transform: translate(-50%, -50%);
+}
+
+.modal h2 {
+  font-size: 28px;
+  line-height: 39px;
+}
+
+.modal p {
+  width: 380px;
+  margin-bottom: 35px;
+}
+
+.modal .form__wrapper-column {
+  display: block;
+}
+
+.modal .form__row {
+  width: auto;
+  margin-bottom: 29px;
+}
+
+.modal .form__row input[type="text"],
+.modal .form__row input[type="tel"] {
+  padding: 17px 22px;
+}
+
+.modal .form__wrapper-textarea {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.modal textarea {
+  height: 110px;
+  padding: 17px 21px;
+}
+
+.modal button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 32px;
+  padding: 14px 0;
+}
+
+.modal label[for="user"] {
+  width: 380px;
+  padding-left: 50px;
+
+  line-height: 20px;
+}
+
+input[type="checkbox"] + span {
+  top: 4px;
+  left: 1px;
+}

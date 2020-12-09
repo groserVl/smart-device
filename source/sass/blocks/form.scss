@@ -40,8 +40,15 @@
   border: none;
   background-color: rgba($white, 0.1);
 
+  transition: all 0.3;
+
   &::placeholder {
     color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, 0.2);
   }
 }
 
@@ -61,6 +68,11 @@
   background-color: rgba($white, 0.1);
 
   resize: none;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, 0.2);
+  }
 }
 
 .form__wrapper-column button {

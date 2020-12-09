@@ -5,6 +5,10 @@
   background-repeat: no-repeat;
   background-position: 85.7% 21%;
   background-size: 37.5% auto;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/pcboard2x.png");
+  }
 }
 
 .intro .container {
@@ -77,9 +81,6 @@
 
   &:hover,
   &:focus {
-    // opacity: 0.6;
-    // color: darken($white, 30%);
-    // background-color: lighten($blue, 10%);
     background-color: darken($blue, 10%);
   }
 
@@ -116,9 +117,13 @@
 
 @media (max-width: $tablet-width) {
   .intro {
-    background-image: url("../img/psboard-tablet.png");
+    background-image: url("../img/pcboard-tablet1x.png");
     background-position: 100% -78px;
     background-size: auto auto;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/pcboard-tablet2x.png");
+    }
   }
 
   .intro__text-row {
@@ -163,6 +168,10 @@
   .intro {
     background-image: url("../img/psboard-mobile1x.png");
     background-position: 100% -55px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/psboard-mobile2x.png");
+    }
   }
 
   .intro .container {

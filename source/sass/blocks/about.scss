@@ -6,6 +6,10 @@
   background-image: url("../img/2005_1x.png");
   background-repeat: no-repeat;
   background-position: -30px 80px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/2005_2x.png");
+  }
 }
 
 .about__title {
@@ -40,6 +44,10 @@
 
     background-image: url("../img/2005-tablet_1x.png");
     background-position: -25px 26px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/2005-tablet_2x.png");
+    }
   }
 
   .about__title {

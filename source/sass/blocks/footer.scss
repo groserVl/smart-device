@@ -21,7 +21,7 @@
   padding-bottom: 53px;
 }
 
-.footer__wrapper-title button {
+.footer__button-accordion {
   display: none;
 }
 
@@ -143,13 +143,75 @@
     padding-bottom: 23px;
   }
 
-  .footer .footer__site-navigation {
+  .footer__site-navigation {
     display: none;
   }
 
+  .footer__wrapper-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .footer__wrapper-contacts {
+    margin: 0;
     padding-top: 26px;
 
     border-top: 1px solid rgba(#626962, 0.2);
+  }
+
+  // Аккордион
+  .footer__button-accordion {
+    position: relative;
+
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    border: none;
+    background: none;
+
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+
+      background-color: #c4c4c4;
+    }
+
+    &::before {
+      top: 50%;
+      left: 0;
+
+      width: 16px;
+      height: 1px;
+    }
+
+    &::after {
+      top: 0;
+      left: 50%;
+
+      width: 1px;
+      height: 16px;
+    }
+  }
+
+  .footer__button-accordion--show {
+    &::after {
+      width: 0;
+    }
+  }
+
+  .footer__office-contacts {
+    display: none;
+  }
+
+  .footer__list-show {
+    display: block;
+  }
+
+  .footer__list-hidden {
+    display: none;
   }
 }

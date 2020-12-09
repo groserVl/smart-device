@@ -8,6 +8,10 @@
   background-color: $blue;
 }
 
+@media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+  background-image: url("../img/airplane2x.png");
+}
+
 .feedback__form {
   margin-left: auto;
 }

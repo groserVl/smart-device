@@ -1,7 +1,7 @@
 .about {
   padding-top: 75px;
   padding-left: 180px;
-  padding-bottom: 60px;
+  padding-bottom: 52px;
 
   background-image: url("../img/2005-1x.png");
   background-repeat: no-repeat;
@@ -13,19 +13,23 @@
   }
 }
 
-.about__title {
+.about h2 {
   @include h2(20px);
 }
 
-.about__text {
+.about p {
   margin: 0;
   margin-bottom: 24px;
 
   letter-spacing: 0.02px;
 }
 
-.about__ellipsis {
+.about--text-hidden span {
   display: none;
+}
+
+.about--text-show span + span {
+  display: inline;
 }
 
 .about__link {
@@ -41,7 +45,7 @@
   .about {
     padding-top: 28px;
     padding-left: 186px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
 
     background-image: url("../img/2005-tablet1x.png");
     background-position: -25px 26px;
@@ -52,22 +56,22 @@
     }
   }
 
-  .about__title {
+  .about h2 {
     margin-bottom: 25px;
 
     font-size: 32px;
     line-height: 45px;
   }
 
-  .about__text {
+  .about p {
     padding-left: 3px;
   }
 
-  .about__ellipsis {
+  .about--text-show span {
     display: inline;
   }
 
-  .about__text-hidden {
+  .about--text-hidden span + span {
     display: none;
   }
 
@@ -94,7 +98,7 @@
     margin-bottom: 0;
   }
 
-  .about__title {
+  .about h2 {
     margin-bottom: 23px;
 
     font-size: 28px;
@@ -102,13 +106,13 @@
   }
 
 
-  p.about__text {
+  section.about p {
     padding-left: 4px;
   }
 
   .about__link {
-    margin-top: 18px;
-    margin-left: 5px;
+    margin-top: 33px;
+    margin-left: 0;
     margin-bottom: 66px;
   }
 }

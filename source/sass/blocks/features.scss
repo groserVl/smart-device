@@ -29,8 +29,8 @@
     background-color: $blue;
   }
 
-  &:hover .features__title-item,
-  &:hover .features__text-item {
+  &:hover h3,
+  &:hover p {
     color: $white;
   }
 
@@ -39,7 +39,7 @@
   }
 }
 
-.features__title-item {
+.features h3 {
   margin: 0;
   margin-top: 14px;
   margin-bottom: 16px;
@@ -51,7 +51,7 @@
   color: $blue;
 }
 
-.features__text-item {
+.features p {
   max-width: 480px;
   margin: 0;
   line-height: 20px;
@@ -81,7 +81,7 @@
     zoom: 0.9;
   }
 
-  .features__title-item {
+  .features h3 {
     margin-top: 1px;
     margin-bottom: 8px;
 
@@ -89,7 +89,7 @@
     letter-spacing: 0.1px;
   }
 
-  .features__text-item {
+  .features p {
     line-height: 22px;
   }
 
@@ -97,7 +97,7 @@
     zoom: 1;
   }
 
-  .features__text-item--height {
+  .features__item--height p {
     margin-bottom: 17px;
   }
 
@@ -105,7 +105,7 @@
     padding-right: 0;
   }
 
-  .features__title-item--correction-margin {
+  .features__item--correction-margin h3 {
     margin-top: 5px;
     margin-bottom: 15px;
   }
@@ -129,14 +129,14 @@
     padding-right: 15px;
   }
 
-  .features__title-item {
+  .features h3 {
     margin-top: 5px;
 
     font-size: 20px;
     line-height: 28px;
   }
 
-  .features__text-item {
+  .features p {
     letter-spacing: 0.1px;
   }
 
@@ -148,7 +148,7 @@
     padding-bottom: 58px;
   }
 
-  .features__text-item--height {
+  .features__item--height p {
     margin-top: 14px;
     margin-bottom: 0;
   }

@@ -1,17 +1,19 @@
 .intro {
   color: $white;
 
-  background-image: url("../img/pcboard1x.png");
+  background-image: url("../img/pcboard1x.png"), url("../img/bg-intro1x.jpg");
   background-repeat: no-repeat;
-  background-position: 85.7% 21%;
-  background-size: 37.5% auto;
+  background-position: 85.3% 120px, center top;
+  background-size: 37% auto, cover;
+
+  background-color: $bg;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/pcboard2x.png");
+    background-image: url("../img/pcboard2x.png"), url("../img/bg-intro2x.jpg");
   }
 }
 
-.intro .container {
+.intro__wrapper {
   max-width: 1470px;
   margin: 0 auto;
   padding: 0 25px;
@@ -20,15 +22,15 @@
 .intro__text-row {
   position: relative;
 
-  padding-top: 225px;
+  padding-top: 314px;
   padding-bottom: 276px;
 }
 
-.intro__title {
+.intro h2 {
   margin: 0;
   margin-bottom: 30px;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: $roboto;
   font-weight: 700;
   font-size: 80px;
   line-height: 94px;
@@ -36,7 +38,7 @@
   text-transform: uppercase;
 }
 
-.intro__subtitle {
+.intro p {
   position: relative;
 
   width: 720px;
@@ -66,13 +68,14 @@
   margin-left: 97px;
   padding: 18px 45px;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: $roboto;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
   color: $white;
   letter-spacing: 0.8px;
   text-transform: uppercase;
+  vertical-align: middle;
 
   background-color: $blue;
   border-radius: 5px;
@@ -87,6 +90,10 @@
   &:active {
     background-color: darken($blue, 20%);
   }
+}
+
+.intro__link-text {
+  outline: none;
 }
 
 .intro__link-mobile {
@@ -115,32 +122,43 @@
   }
 }
 
+@media (max-width: $large-width) {
+  .intro h2 {
+    font-size: 58px;
+  }
+
+  .intro p {
+    width: 650px;
+  }
+}
+
 @media (max-width: $tablet-width) {
   .intro {
-    background-image: url("../img/pcboard-tablet1x.png");
-    background-position: 100% -78px;
-    background-size: auto auto;
+    background-image: url("../img/pcboard-tablet1x.png"), url("../img/bg-intro1x.jpg");
+    background-position: 100% 0, center top;
+    background-size: 330px 466px, cover;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/pcboard-tablet2x.png");
+      background-image: url("../img/pcboard-tablet2x.png"), url("../img/bg-intro2x.jpg");
     }
   }
 
   .intro__text-row {
-    padding-top: 110px;
+    padding-top: 190px;
     padding-bottom: 163px;
     padding-left: 60px;
   }
 
-  .intro__title {
+  .intro h2 {
     width: 60%;
+    margin-bottom: 27px;
 
     font-size: 60px;
     line-height: 70px;
     letter-spacing: 4.5px;
   }
 
-  .intro__subtitle {
+  .intro p {
     width: 450px;
     margin-bottom: 54px;
     padding-left: 8%;
@@ -166,27 +184,28 @@
 
 @media (max-width: $mobile-width) {
   .intro {
-    background-image: url("../img/psboard-mobile1x.png");
-    background-position: 100% -55px;
+    background-image: url("../img/psboard-mobile1x.png"), url("../img/bg-intro1x.jpg");
+    background-position: 100% 0, center top;
+    background-size: 294px 437px, cover;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/psboard-mobile2x.png");
+      background-image: url("../img/psboard-mobile2x.png"), url("../img/bg-intro2x.jpg");
     }
   }
 
-  .intro .container {
+  .intro__wrapper {
     padding: 0 5%;
   }
 
   .intro__text-row {
     padding: 0;
-    padding-top: 230px;
+    padding-top: 285px;
     padding-bottom: 70px;
 
     text-align: center;
   }
 
-  .intro__title {
+  .intro h2 {
     margin-bottom: 25px;
 
     font-size: 40px;
@@ -195,7 +214,7 @@
     text-align: left;
   }
 
-  .intro__subtitle {
+  .intro p {
     width: 280px;
     margin-bottom: 40px;
     padding-left: 50px;

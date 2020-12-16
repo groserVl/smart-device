@@ -1,76 +1,79 @@
 'use strict';
 (function () {
 
+  var modalForm = document.querySelector('.modal form');
   var modal = document.querySelector('.modal');
-  var buttonSubmit = document.querySelector('.modal button[type="submit"]');
-  var modalTitle = document.querySelector('.modal h2');
-  var modalText = document.querySelector('.modal p');
-  var buttonOpenModal = document.querySelector('.header__button');
-  var buttonCloseModal = document.querySelector('.form__button-close');
-  var feedbackForm = document.querySelector('.feedback__form');
   var modalOverlay = document.querySelector('.modal-overlay');
-  var nameInput = document.querySelector('input[type="text"]');
-  var phoneInput = document.querySelector('input[type="tel"]');
-  var textarea = document.querySelector('textarea');
+  var buttonOpenModal = document.querySelector('.header__button');
+  var buttonCloseModal = document.querySelector('.modal button[type="button"]');
+  var modalCheckbox = document.querySelector('.modal input[id="modal-user"]');
 
-  if (modal) {
-    buttonSubmit.textContent = 'Отправить';
-    modalTitle.textContent = 'Закажите звонок';
-    modalText.textContent = 'Оставьте контакты, мы проконсультируем вас бесплатно в удобное время';
+  var name = document.querySelector('#modal-name');
+  var phone = document.querySelector('#modal-phone');
+  var textarea = document.querySelector('#modal-text');
+
+  if (buttonOpenModal) {
+    buttonOpenModal.addEventListener('click', onButtonOpenModalClick);
   }
-
-  buttonOpenModal.addEventListener('click', onButtonOpenModal);
 
   function removeModal() {
-    feedbackForm.classList.remove('modal');
-    buttonCloseModal.classList.remove('form__button-close--show');
+    modal.classList.remove('modal--show');
     modalOverlay.classList.remove('modal-overlay--show');
+
+    document.body.style.overflow = 'visible';
   }
 
-  function onButtonOpenModal(evt) {
+  function closeEventListeners() {
+    buttonCloseModal.removeEventListener('click', onButtonCloseModalClick);
+    modalOverlay.removeEventListener('click', onModalOverlayClick);
+    window.removeEventListener('keydown', onEscapeClick);
+  }
+
+  function onButtonOpenModalClick(evt) {
     evt.preventDefault();
-    feedbackForm.classList.add('modal');
-    buttonCloseModal.classList.add('form__button-close--show');
+    modal.classList.add('modal--show');
     modalOverlay.classList.add('modal-overlay--show');
 
     document.body.style.overflow = 'hidden';
 
-    nameInput.focus();
+    name.focus();
 
-    nameInput.addEventListener('input', function () {
-      localStorage.setItem('name', nameInput.value);
-    });
-    nameInput.value = localStorage.getItem('name');
-
-    phoneInput.addEventListener('input', function () {
-      localStorage.setItem('phone', phoneInput.value);
-    });
-    phoneInput.value = localStorage.getItem('phone');
-
-    textarea.addEventListener('input', function () {
-      localStorage.setItem('text', textarea.value);
-    });
+    name.value = localStorage.getItem('name');
+    phone.value = localStorage.getItem('phone');
     textarea.value = localStorage.getItem('text');
 
-    buttonCloseModal.addEventListener('click', onButtonCloseModal);
-    modalOverlay.addEventListener('click', onModalOverlayCloseModal);
-    window.addEventListener('keydown', onEscapeCloseModal);
+    buttonCloseModal.addEventListener('click', onButtonCloseModalClick);
+    modalOverlay.addEventListener('click', onModalOverlayClick);
+    window.addEventListener('keydown', onEscapeClick);
   }
 
-  function onButtonCloseModal() {
+  function onButtonCloseModalClick() {
     removeModal();
+    closeEventListeners();
   }
 
-  function onModalOverlayCloseModal(evt) {
+  function onModalOverlayClick(evt) {
     if (evt.target === modalOverlay) {
       removeModal();
+      closeEventListeners();
     }
   }
 
-  function onEscapeCloseModal(evt) {
-    if (evt.code === 'Escape' && feedbackForm.classList.contains('modal')) {
+  function onEscapeClick(evt) {
+    if (evt.keyCode === 27 && modal.classList.contains('modal')) {
       removeModal();
+      closeEventListeners();
     }
   }
+
+  modalForm.addEventListener('submit', function (evt) {
+    if (!modalCheckbox.checked) {
+      evt.preventDefault();
+    } else {
+      localStorage.setItem('name', name.value);
+      localStorage.setItem('phone', phone.value);
+      localStorage.setItem('text', textarea.value);
+    }
+  });
 
 })();

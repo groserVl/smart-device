@@ -4,17 +4,15 @@
   width: 570px;
 
   color: $white;
-
-  background-color: $blue;
 }
 
-.form__title {
+.form h2 {
   @include h2(11px);
 
   letter-spacing: -0.1px;
 }
 
-.form__text {
+.form p {
   margin: 0;
   margin-bottom: 50px;
 }
@@ -22,16 +20,14 @@
 .form__wrapper-column {
   display: flex;
   justify-content: space-between;
-
-  background-color: $blue;
 }
 
 .form__row {
   width: 270px;
 }
 
-.form__row input[type="text"],
-.form__row input[type="tel"] {
+.form__row input[id="form-name"],
+.form__row input[id="form-phone"] {
   width: 100%;
   padding: 14px 17px;
 
@@ -57,8 +53,7 @@
   margin-bottom: 37px;
 }
 
-.form__wrapper-textarea textarea {
-
+.form__wrapper-textarea textarea[id="form-text"] {
   width: 100%;
   padding: 17px 15px;
 
@@ -69,13 +64,17 @@
 
   resize: none;
 
+  &::placeholder {
+    color: $white;
+  }
+
   &:hover,
   &:focus {
     background-color: rgba($white, 0.2);
   }
 }
 
-.form__wrapper-column button {
+.form__wrapper-column button[type="submit"] {
   @include button($white);
 
   width: 270px;
@@ -85,7 +84,7 @@
   cursor: pointer;
 }
 
-label[for="user"] {
+.form__row label[for="form-user"] {
   position: relative;
 
   display: block;
@@ -94,87 +93,45 @@ label[for="user"] {
   font-size: 14px;
 
   cursor: pointer;
-}
-
-// Чекбокс
-input[type="checkbox"] + span {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-
-  width: 16px;
-  height: 16px;
-
-  border: 1px solid $white;
-}
-
-input[type="checkbox"]:checked + span {
-  &::before {
-    content: "";
-
-    position: absolute;
-    top: 1px;
-    left: 4px;
-
-    width: 5px;
-    height: 8px;
-
-    border-bottom: 1px solid $white;
-    border-right: 1px solid $white;
-
-    transform: rotate(45deg);
-  }
-}
-
-// Кнопка закрытия модального окна
-.form__button-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-
-  display: none;
-  width: 16.56px;
-  height: 16.56px;
-
-  border: none;
-  background: none;
-
-  cursor: pointer;
 
   &::before,
   &::after {
-    content: "";
     position: absolute;
-    top: 8px;
-    left: -3px;
-
-    width: 23px;
-    height: 1px;
-
-    background-color: $white;
-    border-radius: 5px;
+    content: "";
   }
 
   &::before {
-    transform: rotate(45deg);
+    top: 5px;
+    left: 7px;
+    height: 16px;
+    width: 16px;
+
+    border: 1px solid $white;
   }
 
   &::after {
+    top: 9px;
+    left: 10px;
+
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid $white;
+    border-bottom: 2px solid $white;
+
     transform: rotate(-45deg);
-  }
-
-  &:hover,
-  &:focus {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 0.3;
   }
 }
 
-.form__button-close--show {
-  display: block;
+.form__row input[id="form-user"] + label::after {
+  content: none;
+}
+
+.form__row input[id="form-user"]:checked + label::after {
+  content: "";
+}
+
+.form__row input[id="form-user"]:focus + label::before {
+  outline: 1px solid #e59700;
 }
 
 @media (max-width: $tablet-width) {
@@ -182,14 +139,14 @@ input[type="checkbox"]:checked + span {
     width: 591px;
   }
 
-  .form__title {
+  .form h2 {
     margin-bottom: 18px;
 
     font-size: 32px;
     line-height: 45px;
   }
 
-  .form__text {
+  .form p {
     margin-bottom: 52px;
     padding-left: 4px;
   }
@@ -198,8 +155,8 @@ input[type="checkbox"]:checked + span {
     width: 280px;
   }
 
-  .form__row input[type="text"],
-  .form__row input[type="tel"] {
+  .form__row input[id="form-name"],
+  .form__row input[id="form-phone"] {
     padding: 16px 19px;
   }
 
@@ -208,7 +165,7 @@ input[type="checkbox"]:checked + span {
     margin-bottom: 43px;
   }
 
-  .form__wrapper-textarea textarea {
+  .form__wrapper-textarea textarea[id="form-text"] {
     width: 100%;
     padding: 13px 19px;
 
@@ -220,7 +177,7 @@ input[type="checkbox"]:checked + span {
     resize: none;
   }
 
-  .form__wrapper-column button {
+  .form__wrapper-column button[type="submit"] {
     width: 280px;
     padding: 15px 0;
   }
@@ -231,9 +188,22 @@ input[type="checkbox"]:checked + span {
     line-height: 19px;
   }
 
-  input[type="checkbox"] + span {
-    top: 9px;
-    left: 10px;
+  .form__row label[for="form-user"] {
+    width: 250px;
+    padding-left: 45px;
+    padding-top: 7px;
+
+    line-height: 18px;
+
+    &::before {
+      top: 10px;
+      left: 10px;
+    }
+
+    &::after {
+      top: 13px;
+      left: 14px;
+    }
   }
 }
 
@@ -243,14 +213,14 @@ input[type="checkbox"]:checked + span {
     max-width: 570px;
   }
 
-  .form__title {
+  .form h2 {
     margin-bottom: 15px;
 
     font-size: 28px;
     line-height: 39px;
   }
 
-  .form__text {
+  .form p {
     margin-bottom: 25px;
   }
 
@@ -268,26 +238,31 @@ input[type="checkbox"]:checked + span {
     margin-bottom: 24px;
   }
 
-  .form__wrapper-textarea textarea {
+  .form__wrapper-textarea textarea[id="form-text"] {
     padding: 16px 19px;
     height: 107px;
 
     resize: vertical;
   }
 
-  .form__wrapper-column button {
+  .form__wrapper-column button[type="submit"] {
     display: block;
     width: 100%;
   }
 
-  label[for="user"] {
+  .form__row label[for="form-user"] {
     padding-top: 27px;
     padding-left: 37px;
     line-height: 19px;
-  }
 
-  input[type="checkbox"] + span {
-    top: 30px;
-    left: 3px;
+    &::before {
+      top: 27px;
+      left: 3px;
+    }
+
+    &::after {
+      top: 30px;
+      left: 7px;
+    }
   }
 }

@@ -1,5 +1,4 @@
 .footer {
-
   padding-top: 65px;
 
   color: $gray;
@@ -116,7 +115,7 @@
 
   .footer__wrapper-logo {
     display: block;
-    margin-bottom: 28px;
+    margin-bottom: 0;
     padding: 0 15px 40px;
 
     text-align: center;
@@ -139,12 +138,8 @@
 
   .footer .footer__site-navigation,
   .footer .footer__office-contacts {
-    margin-top: 34px;
+    margin-top: 4px;
     padding-bottom: 23px;
-  }
-
-  .footer__site-navigation {
-    display: none;
   }
 
   .footer__wrapper-title {
@@ -154,64 +149,56 @@
 
   .footer__wrapper-contacts {
     margin: 0;
-    padding-top: 26px;
 
     border-top: 1px solid rgba(#626962, 0.2);
   }
 
+  .footer__site-navigation,
+  .footer__office-contacts {
+    display: none;
+  }
+
   // Аккордион
-  .footer__button-accordion {
+  .footer__accordions h4 {
     position: relative;
-
-    display: block;
-    width: 16px;
-    height: 16px;
-
-    border: none;
-    background: none;
-
-    cursor: pointer;
+    margin: 0;
+    padding: 28px 0;
 
     &::before,
     &::after {
       content: "";
       position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
 
       background-color: #c4c4c4;
     }
 
     &::before {
-      top: 50%;
-      left: 0;
+      right: 0;
 
       width: 16px;
       height: 1px;
     }
 
     &::after {
-      top: 0;
-      left: 50%;
+      right: 8px;
 
       width: 1px;
       height: 16px;
     }
   }
 
-  .footer__button-accordion--show {
-    &::after {
-      width: 0;
-    }
-  }
-
-  .footer__office-contacts {
-    display: none;
-  }
-
-  .footer__list-show {
+  .footer__accordions--nojs .footer__site-navigation,
+  .footer__accordions--show .footer__site-navigation,
+  .footer__accordions--show .footer__office-contacts {
     display: block;
   }
 
-  .footer__list-hidden {
-    display: none;
+  .footer__accordions--nojs h4,
+  .footer__accordions--show h4 {
+    &::after {
+      width: 0;
+    }
   }
 }

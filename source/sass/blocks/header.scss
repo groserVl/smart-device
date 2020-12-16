@@ -1,4 +1,11 @@
-.header .container {
+.header {
+  position: absolute;
+  z-index: 100;
+
+  width: 100%;
+}
+
+.header__wrapper {
   max-width: 1465px;
   margin: 0 auto;
   padding: 0 25px;
@@ -34,7 +41,7 @@
 }
 
 @media (max-width: $tablet-width) {
-  .header .container {
+  .header__wrapper {
     padding: 0 25px;
   }
 
@@ -57,7 +64,7 @@
 }
 
 @media (max-width: $mobile-width) {
-  .header .container {
+  .header__wrapper {
     padding: 0 5%;
   }
 

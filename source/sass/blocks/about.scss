@@ -3,12 +3,13 @@
   padding-left: 180px;
   padding-bottom: 60px;
 
-  background-image: url("../img/2005_1x.png");
+  background-image: url("../img/2005-1x.png");
   background-repeat: no-repeat;
   background-position: -30px 80px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/2005_2x.png");
+    background-image: url("../img/2005-2x.png");
+    background-size: 220px 317px;
   }
 }
 
@@ -42,11 +43,12 @@
     padding-left: 186px;
     padding-bottom: 30px;
 
-    background-image: url("../img/2005-tablet_1x.png");
+    background-image: url("../img/2005-tablet1x.png");
     background-position: -25px 26px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/2005-tablet_2x.png");
+      background-image: url("../img/2005-tablet2x.png");
+      background-size: 244px 362px;
     }
   }
 
@@ -85,7 +87,11 @@
   }
 
   .about p {
-    margin: 0;
+    margin-bottom: 47px;
+  }
+
+  .about p + p {
+    margin-bottom: 0;
   }
 
   .about__title {
@@ -97,16 +103,11 @@
 
 
   p.about__text {
-    margin-bottom: 47px;
     padding-left: 4px;
   }
 
-  p.about__text--reset-margin {
-    margin-bottom: 0;
-  }
-
   .about__link {
-    margin-top: 33px;
+    margin-top: 18px;
     margin-left: 5px;
     margin-bottom: 66px;
   }

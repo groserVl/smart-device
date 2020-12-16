@@ -30,7 +30,7 @@
   margin-right: 7px;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: $tablet-width) {
   .contacts {
     width: auto;
     align-items: center;

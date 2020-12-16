@@ -7,13 +7,15 @@
 @mixin button($color: $white) {
   display: inline-block;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: $roboto;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
   color: $color;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  vertical-align: middle;
+
 
   border: 1px solid $color;
   border-radius: 5px;
@@ -34,7 +36,7 @@
   margin: 0;
   margin-bottom: $num;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: $roboto;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
@@ -45,7 +47,7 @@
   margin: 0;
   margin-bottom: $num;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-family: $roboto;
   font-weight: 400;
   font-size: 15px;
   line-height: 16px;

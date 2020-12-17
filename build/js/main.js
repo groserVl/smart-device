@@ -117,10 +117,14 @@
 
 (function () {
   var feedbackForm = document.querySelector('.feedback form');
-  var formCheckbox = document.querySelector('.form input[id="form-user"]');
+  var formCheckbox = document.querySelector('.form input[id="form-user"]'); // var wrapperCheckbox = document.querySelector('.form__wrapper-column--checkbox');
+
   feedbackForm.addEventListener('submit', function (evt) {
     if (!formCheckbox.checked) {
-      evt.preventDefault();
+      evt.preventDefault(); // var newDiv = document.createElement('p');
+      // newDiv.innerHTML = 'Поставте, пожалйста галучку согласия';
+      // var firstElem = wrapperCheckbox.firstChild.nextSibling;
+      // wrapperCheckbox.insertBefore(newDiv, firstElem);
     }
   });
   var inputFormTel = document.querySelector('input[id="form-phone"]');

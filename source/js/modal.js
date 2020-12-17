@@ -38,6 +38,17 @@
 
     name.focus();
 
+    // var isStorageSupport = true;
+    // var storage = '';
+
+    // try {
+    //   storage = localStorage.getItem('text');
+    // } catch (err) {
+    //   isStorageSupport = false;
+    // }
+
+    // textarea.value = storage;
+
     name.value = localStorage.getItem('name');
     phone.value = localStorage.getItem('phone');
     textarea.value = localStorage.getItem('text');

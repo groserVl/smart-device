@@ -3,19 +3,19 @@
 
   var feedbackForm = document.querySelector('.feedback form');
   var formCheckbox = document.querySelector('.form input[id="form-user"]');
-  // var wrapperCheckbox = document.querySelector('.form__wrapper-column--checkbox');
+  var textAlert = document.querySelector('.form__wrapper-column--checkbox p');
 
-  feedbackForm.addEventListener('submit', function (evt) {
-    if (!formCheckbox.checked) {
-      evt.preventDefault();
-      // var newDiv = document.createElement('p');
-      // newDiv.innerHTML = 'Поставте, пожалйста галучку согласия';
-      // var firstElem = wrapperCheckbox.firstChild.nextSibling;
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function (evt) {
+      if (!formCheckbox.checked) {
+        evt.preventDefault();
+        textAlert.classList.add('show-text');
 
-      // wrapperCheckbox.insertBefore(newDiv, firstElem);
-
-    }
-  });
+      } else {
+        textAlert.classList.remove('show-text');
+      }
+    });
+  }
 
   var inputFormTel = document.querySelector('input[id="form-phone"]');
   var inputModalTel = document.querySelector('input[id="modal-phone"]');

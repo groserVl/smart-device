@@ -1553,6 +1553,21 @@ body {
 .form__row input[id="form-user"]:focus + label::before {
   outline: 1px solid #e59700; }
 
+.form__wrapper-column--checkbox {
+  position: relative; }
+
+.form__wrapper-column--checkbox p {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  display: none;
+  margin: 0;
+  font-size: 18px;
+  color: red; }
+
+.form__wrapper-column--checkbox p.show-text {
+  display: block; }
+
 @media (max-width: 1023px) {
   .form {
     width: 591px; }
@@ -1595,7 +1610,9 @@ body {
       left: 10px; }
     .form__row label[for="form-user"]::after {
       top: 13px;
-      left: 14px; } }
+      left: 14px; }
+  .form__wrapper-column--checkbox p {
+    bottom: -100px; } }
 
 @media (max-width: 767px) {
   .form {
@@ -1631,7 +1648,10 @@ body {
       left: 3px; }
     .form__row label[for="form-user"]::after {
       top: 33px;
-      left: 7px; } }
+      left: 7px; }
+  .form__wrapper-column--checkbox p {
+    bottom: -50px;
+    font-size: 14px; } }
 
 .modal {
   display: none;

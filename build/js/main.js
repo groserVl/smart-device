@@ -55,7 +55,15 @@
     modal.classList.add('modal--show');
     modalOverlay.classList.add('modal-overlay--show');
     document.body.style.overflow = 'hidden';
-    name.focus();
+    name.focus(); // var isStorageSupport = true;
+    // var storage = '';
+    // try {
+    //   storage = localStorage.getItem('text');
+    // } catch (err) {
+    //   isStorageSupport = false;
+    // }
+    // textarea.value = storage;
+
     name.value = localStorage.getItem('name');
     phone.value = localStorage.getItem('phone');
     textarea.value = localStorage.getItem('text');
@@ -97,7 +105,8 @@
 'use strict';
 
 (function () {
-  var anchors = document.querySelectorAll('a[href*="#"]');
+  // var anchors = document.querySelectorAll('a[href*="#"]');
+  var anchors = document.querySelectorAll('a[class^="intro"]');
 
   if (anchors) {
     anchors.forEach(function (item) {
@@ -110,23 +119,40 @@
         });
       });
     });
-  }
+  } // var anchors = document.querySelectorAll('a[class^="intro"]');
+  // if (anchors) {
+  //   for (var i = 0; i < anchors.length; i++) {
+  //     anchors[i].addEventListener('click', function (evt) {
+  //       evt.preventDefault();
+  //       var id = evt.target.getAttribute('href');
+  //       document.querySelector(id).scrollIntoView({
+  //         behavior: 'smooth',
+  //         block: 'start',
+  //       });
+  //     });
+  //   }
+  // }
+
 })();
 
 'use strict';
 
 (function () {
   var feedbackForm = document.querySelector('.feedback form');
-  var formCheckbox = document.querySelector('.form input[id="form-user"]'); // var wrapperCheckbox = document.querySelector('.form__wrapper-column--checkbox');
+  var formCheckbox = document.querySelector('.form input[id="form-user"]');
+  var textAlert = document.querySelector('.form__wrapper-column--checkbox p');
 
-  feedbackForm.addEventListener('submit', function (evt) {
-    if (!formCheckbox.checked) {
-      evt.preventDefault(); // var newDiv = document.createElement('p');
-      // newDiv.innerHTML = 'Поставте, пожалйста галучку согласия';
-      // var firstElem = wrapperCheckbox.firstChild.nextSibling;
-      // wrapperCheckbox.insertBefore(newDiv, firstElem);
-    }
-  });
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', function (evt) {
+      if (!formCheckbox.checked) {
+        evt.preventDefault();
+        textAlert.classList.add('show-text');
+      } else {
+        textAlert.classList.remove('show-text');
+      }
+    });
+  }
+
   var inputFormTel = document.querySelector('input[id="form-phone"]');
   var inputModalTel = document.querySelector('input[id="modal-phone"]');
   var createMask = window.IMask;

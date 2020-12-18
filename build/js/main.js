@@ -20,6 +20,8 @@
     });
   }
 })();
+/* eslint-disable no-unused-vars */
+
 
 'use strict';
 
@@ -55,18 +57,17 @@
     modal.classList.add('modal--show');
     modalOverlay.classList.add('modal-overlay--show');
     document.body.style.overflow = 'hidden';
-    name.focus(); // var isStorageSupport = true;
-    // var storage = '';
-    // try {
-    //   storage = localStorage.getItem('text');
-    // } catch (err) {
-    //   isStorageSupport = false;
-    // }
-    // textarea.value = storage;
+    name.focus();
+    var isStorageSupport = true;
 
-    name.value = localStorage.getItem('name');
-    phone.value = localStorage.getItem('phone');
-    textarea.value = localStorage.getItem('text');
+    try {
+      name.value = localStorage.getItem('name');
+      phone.value = localStorage.getItem('phone');
+      textarea.value = localStorage.getItem('text');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
     buttonCloseModal.addEventListener('click', onButtonCloseModalClick);
     modalOverlay.addEventListener('click', onModalOverlayClick);
     window.addEventListener('keydown', onEscapeClick);

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 (function () {
 
@@ -38,20 +39,17 @@
 
     name.focus();
 
-    // var isStorageSupport = true;
-    // var storage = '';
 
-    // try {
-    //   storage = localStorage.getItem('text');
-    // } catch (err) {
-    //   isStorageSupport = false;
-    // }
+    var isStorageSupport = true;
 
-    // textarea.value = storage;
+    try {
+      name.value = localStorage.getItem('name');
+      phone.value = localStorage.getItem('phone');
+      textarea.value = localStorage.getItem('text');
 
-    name.value = localStorage.getItem('name');
-    phone.value = localStorage.getItem('phone');
-    textarea.value = localStorage.getItem('text');
+    } catch (err) {
+      isStorageSupport = false;
+    }
 
     buttonCloseModal.addEventListener('click', onButtonCloseModalClick);
     modalOverlay.addEventListener('click', onModalOverlayClick);

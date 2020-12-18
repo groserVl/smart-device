@@ -139,6 +139,7 @@
 .form__wrapper-column--checkbox {
   position: relative;
 }
+
 .form__wrapper-column--checkbox p {
   position: absolute;
   bottom: -40px;
@@ -291,9 +292,9 @@
     }
   }
 
-    .form__wrapper-column--checkbox p {
-      bottom: -50px;
+  .form__wrapper-column--checkbox p {
+    bottom: -50px;
 
-      font-size: 14px;
+    font-size: 14px;
   }
 }

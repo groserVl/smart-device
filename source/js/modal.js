@@ -7,6 +7,7 @@
   var buttonOpenModal = document.querySelector('.header__button');
   var buttonCloseModal = document.querySelector('.modal button[type="button"]');
   var modalCheckbox = document.querySelector('.modal input[id="modal-user"]');
+  var textAlert = document.querySelector('.modal__checkbox');
 
   var name = document.querySelector('#modal-name');
   var phone = document.querySelector('#modal-phone');
@@ -39,7 +40,6 @@
     name.focus();
 
     try {
-
       name.value = localStorage.getItem('name');
       phone.value = localStorage.getItem('phone');
       textarea.value = localStorage.getItem('text');
@@ -77,7 +77,10 @@
   modalForm.addEventListener('submit', function (evt) {
     if (!modalCheckbox.checked) {
       evt.preventDefault();
+      textAlert.classList.add('modal__checkbox--show-text');
     } else {
+      textAlert.classList.remove('modal__checkbox--show-text');
+
       localStorage.setItem('name', name.value);
       localStorage.setItem('phone', phone.value);
       localStorage.setItem('text', textarea.value);

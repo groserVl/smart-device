@@ -30,6 +30,7 @@
   var buttonOpenModal = document.querySelector('.header__button');
   var buttonCloseModal = document.querySelector('.modal button[type="button"]');
   var modalCheckbox = document.querySelector('.modal input[id="modal-user"]');
+  var textAlert = document.querySelector('.modal__checkbox');
   var name = document.querySelector('#modal-name');
   var phone = document.querySelector('#modal-phone');
   var textarea = document.querySelector('#modal-text');
@@ -94,7 +95,9 @@
   modalForm.addEventListener('submit', function (evt) {
     if (!modalCheckbox.checked) {
       evt.preventDefault();
+      textAlert.classList.add('modal__checkbox--show-text');
     } else {
+      textAlert.classList.remove('modal__checkbox--show-text');
       localStorage.setItem('name', name.value);
       localStorage.setItem('phone', phone.value);
       localStorage.setItem('text', textarea.value);
@@ -105,7 +108,6 @@
 'use strict';
 
 (function () {
-  // var anchors = document.querySelectorAll('a[href*="#"]');
   var anchors = document.querySelectorAll('a[class^="intro"]');
 
   if (anchors) {
@@ -119,20 +121,7 @@
         });
       });
     });
-  } // var anchors = document.querySelectorAll('a[class^="intro"]');
-  // if (anchors) {
-  //   for (var i = 0; i < anchors.length; i++) {
-  //     anchors[i].addEventListener('click', function (evt) {
-  //       evt.preventDefault();
-  //       var id = evt.target.getAttribute('href');
-  //       document.querySelector(id).scrollIntoView({
-  //         behavior: 'smooth',
-  //         block: 'start',
-  //       });
-  //     });
-  //   }
-  // }
-
+  }
 })();
 
 'use strict';

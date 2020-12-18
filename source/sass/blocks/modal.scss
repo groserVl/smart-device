@@ -186,3 +186,23 @@
 .modal--show {
   display: block;
 }
+
+.modal__checkbox {
+  position: relative;
+}
+
+.modal__checkbox p {
+  position: absolute;
+  top: -25px;
+  left: 50px;
+
+  display: none;
+  margin: 0;
+
+  font-size: 14px;
+  color: red;
+}
+
+.modal__checkbox--show-text p {
+  display: block;
+}

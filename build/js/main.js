@@ -20,8 +20,6 @@
     });
   }
 })();
-/* eslint-disable no-unused-vars */
-
 
 'use strict';
 
@@ -58,14 +56,15 @@
     modalOverlay.classList.add('modal-overlay--show');
     document.body.style.overflow = 'hidden';
     name.focus();
-    var isStorageSupport = true;
 
     try {
       name.value = localStorage.getItem('name');
       phone.value = localStorage.getItem('phone');
       textarea.value = localStorage.getItem('text');
     } catch (err) {
-      isStorageSupport = false;
+      name.value = localStorage.removeItem('name');
+      phone.value = localStorage.rmoveItem('phone');
+      textarea.value = localStorage.removeItem('text');
     }
 
     buttonCloseModal.addEventListener('click', onButtonCloseModalClick);

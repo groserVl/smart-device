@@ -45,7 +45,7 @@
       textarea.value = localStorage.getItem('text');
 
     } catch (err) {
-      localStorage.clear();
+      name.focus();
     }
 
     // name.value = localStorage.getItem('name');

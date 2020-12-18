@@ -63,7 +63,7 @@
       phone.value = localStorage.getItem('phone');
       textarea.value = localStorage.getItem('text');
     } catch (err) {
-      localStorage.clear();
+      name.focus();
     } // name.value = localStorage.getItem('name');
     // phone.value = localStorage.getItem('phone');
     // textarea.value = localStorage.getItem('text');

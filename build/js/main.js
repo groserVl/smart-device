@@ -56,18 +56,19 @@
     modal.classList.add('modal--show');
     modalOverlay.classList.add('modal-overlay--show');
     document.body.style.overflow = 'hidden';
-    name.focus();
+    name.focus(); // try {
+    //   name.value = localStorage.getItem('name');
+    //   phone.value = localStorage.getItem('phone');
+    //   textarea.value = localStorage.getItem('text');
+    // } catch (err) {
+    //   name.value = localStorage.removeItem('name');
+    //   phone.value = localStorage.rmoveItem('phone');
+    //   textarea.value = localStorage.removeItem('text');
+    // }
 
-    try {
-      name.value = localStorage.getItem('name');
-      phone.value = localStorage.getItem('phone');
-      textarea.value = localStorage.getItem('text');
-    } catch (err) {
-      name.value = localStorage.removeItem('name');
-      phone.value = localStorage.rmoveItem('phone');
-      textarea.value = localStorage.removeItem('text');
-    }
-
+    name.value = localStorage.getItem('name');
+    phone.value = localStorage.getItem('phone');
+    textarea.value = localStorage.getItem('text');
     buttonCloseModal.addEventListener('click', onButtonCloseModalClick);
     modalOverlay.addEventListener('click', onModalOverlayClick);
     window.addEventListener('keydown', onEscapeClick);
